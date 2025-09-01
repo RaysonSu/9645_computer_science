@@ -4,5 +4,6 @@
   "newFileLocation": "current",
   "attachmentFolderPath": "./media",
   "showUnsupportedFiles": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "livePreview": false
 }
