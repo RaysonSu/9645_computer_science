@@ -1,3 +1,5 @@
 workspace.json
 .DS_Store
 .trash
+.obsidian/*
+9645_vault/.obsidian/*
