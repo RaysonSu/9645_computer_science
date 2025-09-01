@@ -298,6 +298,8 @@ git push
 
 Using the Mermaid Live plugin, create a class relationship diagram representing the relationships between the classes featured in the last two worksheets.
 
+There is a guide to Mermaid Live UML syntax here [link tbc]
+
 ---
 
 **A:**
