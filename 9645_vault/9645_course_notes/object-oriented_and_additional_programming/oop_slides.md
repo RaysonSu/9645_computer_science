@@ -40,7 +40,7 @@
 * Setter
 * Private `__`
 * Protected `_`
-* Public
+* Pubic
 * Modifier
 
 
