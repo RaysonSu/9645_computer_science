@@ -9,7 +9,7 @@ Fragmented lists appear item-by-item.
 
 For unordered, use * instead of -.
 
-For ordered, use ) after the enumerator.
+For ordered, use 1) style enumerators instead of 1.
 
 ---
 
