@@ -125,6 +125,8 @@ print(f"I like {test.__x}s and I like {test.__y}s!")
 
 # A Class, Constructor, and Instantiation Parameters
 
+`__init__()` - the constructor method, executed when the object is first instantiated
+
 ```python
 class Animal:
 	def __init__(self, name, species, age, owner_name):
@@ -148,6 +150,10 @@ billy = Animal("Billy", "Goat", 6, "Mr. Yates")
 ---
 
 # Private, Public, Protected Modifiers
+
+* Private properties / methods - can only be accessed from within the same class.
+* Protected properties / methods - within that class and any derivatives (children).
+* Public properties / methods - can be accessed freely from outside the class.
 
 ```python
 class MedicalRecord:
