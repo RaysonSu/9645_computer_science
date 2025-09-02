@@ -52,6 +52,7 @@
 * Child / Subclass
 * `super()`
 * Inheritance
+* Association
 * Composition
 * Aggregation
 * Overriding
@@ -121,7 +122,34 @@ print(f"I like {test.__x}s and I like {test.__y}s!")
 
 ---
 
+# CRDs
+
+
+
+---
+
 # 'Do Now's Lesson 2
+
+```python
+class A:
+	def __init__(self):
+		self.x = False
+		self.y = True
+		
+class B:
+	def __init__(self):
+		self.x = A()
+		self.y = A()
+		
+
+a = A()
+b = B()
+
+print(a.x == b.x.y)
+print(type(a.x))
+print(type(b.x.x))
+		
+```
 
 ```python
 class Y:
@@ -130,6 +158,15 @@ class Y:
 		
 class X(Y):
 	def __init__(self):
+		self.a = 1
 		super().__init__()
+		self.a += 1
+		
+	def get(self):
+		return self.a
+		
+x = X().get()
+print(x)
 		
 ```
+
