@@ -1,11 +1,8 @@
 run 
 ```bash 
-git stage .
-# get everything ready to commmit
-git commit -m "this is a message"
-# perform the commit to modify the local repo
-git push
-# push the commit up to the remote repo
+git stage . # get everything ready to commmit
+git commit -m "this is a message" # perform the commit to modify the local repo
+git push # push the commit up to the remote repo
 ```
 for whenever you want to save stuff
 
