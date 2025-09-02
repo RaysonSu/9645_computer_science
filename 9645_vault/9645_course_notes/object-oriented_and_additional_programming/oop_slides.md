@@ -40,7 +40,7 @@
 * Setter
 * Private `__`
 * Protected `_`
-* Pubic
+* Public
 * Modifier
 
 
@@ -56,6 +56,7 @@
 * Composition
 * Aggregation
 * Overriding
+* Encapsulation
 
 ---
 # 'Do Now's Lesson 1
@@ -122,9 +123,73 @@ print(f"I like {test.__x}s and I like {test.__y}s!")
 
 ---
 
-# CRDs
+# A Class, Constructor, and Instantiation Parameters
+
+```python
+class Animal:
+	def __init__(self, name, species, age, owner_name):
+		self.name = name
+		self.species = species
+		self.age = age
+		self.owner_name = owner_name
+		self.alive = True
+```
+
+---
+
+# Instantiation
+
+```python
+
+fred = Animal("Fred", "Gecko", 3, "Mr. Yates")
+billy = Animal("Billy", "Goat", 6, "Mr. Yates")
+```
+
+---
+
+# Private, Public, Protected Modifiers
+
+```python
+class MedicalRecord:
+    def __init__(self, animal, diagnosis, treatment_plan, vet_notes):
+        self.animal = animal  # The animal associated with the record 
+        self._diagnosis = diagnosis  # Diagnosis (protected)
+        self._treatment_plan = treatment_plan  # Treatment plan
+        self.__vet_notes = vet_notes  # Notes from the veterinarian 
 
 
+# Example Usage
+if __name__ == "__main__":
+    
+    animal = Animal("Buddy", "Dog", 5, "Alice Johnson")
+    record = MedicalRecord(animal, "Arthritis", "Pain management and light exercise", "Monitor progress weekly.")
+    print(f"Animal: {record.animal.name}")
+    # Access protected attribute (not recommended but possible)
+    print(f"Protected Diagnosis: {record._diagnosis}")
+    
+```
+
+---
+
+# Getters and Setters
+
+To enforce proper encapsulation, method interfaces should be used.
+
+**Getters** allow outside access to internal private data.
+
+**Setters** allow internal private properties to be set from outside scopes.
+
+```python
+	def add_vet_notes(self, new_notes):
+			""" Public method to update vet notes via private method. """
+			self.__update_vet_notes(new_notes)
+			
+
+	def get_vet_notes(self):
+		""" Retrieves the private vet notes (for authorised access). """
+		return self.__vet_notes
+```
+    
 
 ---
 
@@ -151,6 +216,8 @@ print(type(b.x.x))
 		
 ```
 
+---
+
 ```python
 class Y:
 	def __init__(self):
@@ -170,3 +237,25 @@ print(x)
 		
 ```
 
+---
+
+
+
+# CRD Example
+
+Discuss the data design decisions that have been made in this system.
+
+![height:600px](https://cdn-proxy.slickplan.com/wp-content/uploads/2025/08/banking-uml-class-diagram.jpg)
+
+---
+
+# CRD Syntax
+
+* **+** denotes a public attribute
+* **-** denotes a private attribute
+* \**#** denotes a public method
+* -▷ a hollow triangular arrowhead denotes **inheritance**
+* --- a line with no arrowheadbetween classes denotes **association**
+* -◇ a hollow a diamond arrowhead denotes **aggregation**
+* -◆ an opaque diamond arrowhead denotes **composition**
+* The x...y syntax denotes **cardinality** - how many instances of some object associate with how many instances of another object.
