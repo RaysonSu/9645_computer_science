@@ -59,7 +59,7 @@
 * Encapsulation
 
 ---
-# 'Do Now's Lesson 1
+# 'Do Now' Code Puzzles Lesson 1
 
 _With your partner, discuss each code snippet. What will be output, and why?_
 
@@ -73,17 +73,17 @@ class A:
 class B:
 	def __init__(self, thing):
 		self.name = thing
-		
-		
-var1 = A("Tim")
-var2 = A("Tom")
-var3 = B("Tin")
-var4 = B("Ton")
 
-print("var2 is called", var2.name)
-print("var1 is called", var1.name)
-print("var4 is called", var4.name)
-print("var3 is called", var3.name)
+if __name__ == "__main__":	
+	var1 = A("Tim")
+	var2 = A("Tom")
+	var3 = B("Tin")
+	var4 = B("Ton")
+	
+	print("var2 is called", var2.name)
+	print("var1 is called", var1.name)
+	print("var4 is called", var4.name)
+	print("var3 is called", var3.name)
 
 ```
 
@@ -99,10 +99,11 @@ class X:
 	
 	def test(self):
 		return self.x == self.y
-		
-thing = X()
-if thing.test:
-	print("Fishcat")
+
+if __name__ == "__main__":		
+	thing = X()
+	if thing.test:
+		print("Fishcat")
 ```
 
 ---
@@ -115,19 +116,23 @@ class Y:
 		self.__x = "horsey"
 		self.__y = "frogs"
 	
-
-		
-test = Y()
-print(f"I like {test.__x}s and I like {test.__y}s!")
+if __name__ == "__main__":	
+	test = Y()
+	print(f"I like {test.__x}s and I like {test.__y}s!")
 ```
 
 ---
 
 # A Class, Constructor, and Instantiation Parameters
 
-`__init__()` - the constructor method, executed when the object is first instantiated
+`__init__()` - the constructor method, executed when the object is first instantiated.
+
+Commonly used to initialise object properties - according to data passed in via instance parameters, or to some default values.
 
 ```python
+
+# note, code block missing full context - not intended to be executed
+
 class Animal:
 	def __init__(self, name, species, age, owner_name):
 		self.name = name
@@ -143,9 +148,13 @@ class Animal:
 
 ```python
 
+# note, code block missing full context - not intended to be executed
+
 fred = Animal("Fred", "Gecko", 3, "Mr. Yates")
 billy = Animal("Billy", "Goat", 6, "Mr. Yates")
 ```
+
+Both `fred` and `billy` now have the data type of: `Animal`
 
 ---
 
@@ -156,6 +165,9 @@ billy = Animal("Billy", "Goat", 6, "Mr. Yates")
 * Public properties / methods - can be accessed freely from outside the class.
 
 ```python
+
+# note, code block missing full context - not intended to be executed
+
 class MedicalRecord:
     def __init__(self, animal, diagnosis, treatment_plan, vet_notes):
         self.animal = animal  # The animal associated with the record 
@@ -179,13 +191,18 @@ if __name__ == "__main__":
 
 # Getters and Setters
 
-To enforce proper encapsulation, method interfaces should be used.
+To enforce proper **encapsulation**, method interfaces should be used.
 
 **Getters** allow outside access to internal private data.
 
 **Setters** allow internal private properties to be set from outside scopes.
 
 ```python
+
+# note, code block missing full context - not intended to be executed
+
+class Animal:
+	## ....
 	def add_vet_notes(self, new_notes):
 			""" Public method to update vet notes via private method. """
 			self.__update_vet_notes(new_notes)
@@ -196,10 +213,27 @@ To enforce proper encapsulation, method interfaces should be used.
 		return self.__vet_notes
 ```
     
+---
+
+# Technology Current Affairs Task
+
+Recently there has been news about the US government purchasing a spyware program named "____" from the company Paragon.
+
+Consider the hypothetical OOP design of "____".
+
+What...
+
+* Objects
+* Properties
+* Methods
+
+... do you think this programming code for this software contains?
 
 ---
 
-# 'Do Now's Lesson 2
+# 'Do Now' Code Puzzles Lesson 2
+
+_With your partner, discuss each code snippet. What will be output, and why?_
 
 ```python
 class A:
@@ -212,13 +246,13 @@ class B:
 		self.x = A()
 		self.y = A()
 		
-
-a = A()
-b = B()
-
-print(a.x == b.x.y)
-print(type(a.x))
-print(type(b.x.x))
+if __name__ == "__main__":
+	a = A()
+	b = B()
+	
+	print(a.x == b.x.y)
+	print(type(a.x))
+	print(type(b.x.x))
 		
 ```
 
@@ -238,13 +272,76 @@ class X(Y):
 	def get(self):
 		return self.a
 		
-x = X().get()
-print(x)
+if __name__ == "__main__":		
+	x = X().get()
+	print(x)
 		
 ```
 
 ---
 
+# Inheritance
+
+```python
+
+# note, code block missing full context - not intended to be executed
+
+class Animal:
+	pass
+	
+class Dog(Animal):
+	pass
+```
+
+If an object *inherits* some of its properties and behaviour from another object, then the two objects have a **"B is a type of A"** relationship.
+
+* *A dog is a type of animal*
+
+What other examples can you think of?
+
+---
+
+# `super()`
+
+The built-in function `super()` allows an object to make reference to its parent. You will likely use this inside your child class' constructor - to make sure the parent object constructor is executed at the same time.
+
+```python
+
+# note, code block missing full context - not intended to be executed
+
+class Animal:
+	def __init__(self, age, weight):
+		self.__age = age
+		self.__weight = weight
+	
+	
+class Dog(Animal):
+	def __init__(self, age, weight, obedience):
+		super().__init__(age, weight)
+		self.__obedience = obedience
+```
+
+---
+
+# Overriding
+
+The process of **overriding** is where a child class modifies or extends the existing behaviour of a parent class.
+
+```python
+
+# note, code block missing full context - not intended to be executed
+
+class Animal:
+	# ....
+	def hear_whistle(self):
+		self.__speed = 10
+		
+class Dog(Animal):
+	# ....
+	def hear_whistle(self, owner):
+		super().hear_whistle()
+		self._move_towards(owner.x, owner.y)
+```
 
 
 # CRD Example
