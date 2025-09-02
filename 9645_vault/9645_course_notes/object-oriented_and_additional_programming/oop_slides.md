@@ -217,9 +217,9 @@ class Animal:
 
 # Technology Current Affairs Task
 
-Recently there has been news about the US government purchasing a spyware program named "____" from the company Paragon.
+Recently there has been [news](https://www.theguardian.com/us-news/2025/sep/02/trump-immigration-ice-israeli-spyware) about the US government purchasing a spyware program named "Graphite" from the company Paragon.
 
-Consider the hypothetical OOP design of "____".
+Consider the hypothetical OOP design of *Graphite*.
 
 What...
 
