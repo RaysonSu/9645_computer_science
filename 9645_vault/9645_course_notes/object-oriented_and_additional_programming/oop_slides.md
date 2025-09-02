@@ -120,3 +120,16 @@ print(f"I like {test.__x}s and I like {test.__y}s!")
 ```
 
 ---
+
+# 'Do Now's Lesson 2
+
+```python
+class Y:
+	def __init__(self):
+		self.a = 9
+		
+class X(Y):
+	def __init__(self):
+		super().__init__()
+		
+```
