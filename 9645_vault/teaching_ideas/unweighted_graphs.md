@@ -1,4 +1,4 @@
-- talk about why graphs are useful
+r- talk about why graphs are useful
 	- give examples
 		- friendship graphs
 		- relationships
