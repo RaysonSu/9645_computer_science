@@ -1,6 +1,8 @@
 run 
 ```bash 
-git stage . && git commit -m "this is a message" && git push
+git stage . \
+&& git commit -m "this is a message" \
+&& git push
 ```
 for whenever you want to save stuff
 
