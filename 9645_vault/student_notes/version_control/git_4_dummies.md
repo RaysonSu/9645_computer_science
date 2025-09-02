@@ -11,7 +11,8 @@ git push # push the commit up to the remote repo
 ### saving notes on obsidian?
 
 idk i really like clis
-
+but there's git panel on the left
+go figure it out mate
 ### other crap
 
 version control is cool
