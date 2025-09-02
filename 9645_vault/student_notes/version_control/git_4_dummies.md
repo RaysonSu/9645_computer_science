@@ -8,9 +8,14 @@ git commit -m "this is a message" # perform the commit to modify the local repo
 git push # push the commit up to the remote repo
 ```
 
+```python
+import os
+print(os.getcwd())
+```
 ### saving notes on obsidian?
 
-idk i really like clis
+idk 
+i really like clis
 but there's git panel on the left
 go figure it out mate
 there's literally just 8 buttons
