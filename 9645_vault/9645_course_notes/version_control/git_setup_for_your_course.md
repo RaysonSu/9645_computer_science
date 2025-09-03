@@ -104,5 +104,10 @@ git pull
 git push
 ```
 
+## Creating a Pull Request
+To create a pull request use the following github cli command in terminal after making your changes.
 
+``` shell
+gh pr create
+```
 
