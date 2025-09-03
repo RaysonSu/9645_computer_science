@@ -9,3 +9,8 @@ rationale:
 
 implementation: 
 - adj list w/ weights
+
+tasks:
+- modify the adj list implementation in [[unweighted_graphs]] to add weights
+	- solution in [[source#Weighted Graph by Adjacency List]]
+- why would an adj matrix not be sutiable for weighted graphs?
