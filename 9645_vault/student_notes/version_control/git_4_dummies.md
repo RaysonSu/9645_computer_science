@@ -7,11 +7,13 @@ git stage . # get everything ready to commmit
 git commit -m "this is a message" # perform the commit to modify the local repo
 git push # push the commit up to the remote repo
 ```
+### yoinking stuff from teachers
 
-```python
-import os
-print(os.getcwd())
+run this command:
+```bash
+git fetch upstream
 ```
+
 ### saving notes on obsidian?
 
 idk 
