@@ -16,6 +16,7 @@ For ordered, use 1) style enumerators instead of 1.
 # Images
 
 Syntax is:
+
 ``` md
 ![properties](path)
 ```
