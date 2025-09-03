@@ -111,3 +111,4 @@ To create a pull request use the following github cli command in terminal after 
 gh pr create
 ```
 
+Don't forget to close and re-open obsidian to refresh the git plugin and reflect this change so that you can continue to use the git plugin to stage, commit and push from the plugin.
