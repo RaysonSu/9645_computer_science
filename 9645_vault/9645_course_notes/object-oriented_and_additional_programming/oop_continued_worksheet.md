@@ -202,7 +202,9 @@ git push
 
 ---
 
-## Composition & Aggregation
+## Association, Composition & Aggregation
+
+**Association** is a "knows-about" relationship.
 
 **Composition** and **aggregation** are "has-a" relationships. Composition implies a strong relationship where the associated object is owned by the container and cannot exist independently. Aggregation implies a weaker relationship where the associated object can exist independently and be shared among multiple containers.
 
@@ -265,18 +267,6 @@ git push
 ## TASK 7: Aggregation Relationship Example
 
 Create a new class that demonstrates aggregation.
-
-```python
-class Project:
-	def __init__(self, name):
-		self.name = name
-
-class TeamMember:
-	def __init__(self, name, project):
-		self.name = name
-		self.project = project
-```
-
 
 ---
 
