@@ -3,22 +3,11 @@
 
 ---
 
-# Serial Files
-
----
-
-A text file is an example of a **serial file**.
-
-This is because:
-
-* data can only be appended (unless the entire file is rewritten)
-* the file can only be read line-by-line, in sequence.
-
 ---
 
 ## TASK 1
 
-Explain three different modes for opening text files in Python.
+Explain each of the following
 
 Show a sensible example of each mode in practice, and demonstrate some of the methods associated with that mode.
 
@@ -61,17 +50,14 @@ State the name of the technique that is being used the second time the file is o
 
 ---
 
-# Random Access File
+# Binary Files
 
-A random access file stores data at a certain starting byte, and can directly read data found at that byte. All bytes in the file can also be read in sequence.
+tbc 
 
-To work with random access files in Python, files must be opened in one of the binary modes:
 
 ```python
 "rb" # read bytes
 "wb" # write bytes
-"rwb+" # ?
-"rb+" # ?
 ```
 
 ## TASK 4
