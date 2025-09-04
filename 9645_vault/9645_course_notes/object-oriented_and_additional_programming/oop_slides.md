@@ -170,9 +170,9 @@ Both `fred` and `billy` now have the data type of: `Animal`
 
 class MedicalRecord:
     def __init__(self, animal, diagnosis, treatment_plan, vet_notes):
-        self.animal = animal  # The animal associated with the record 
-        self._diagnosis = diagnosis  # Diagnosis (protected)
-        self._treatment_plan = treatment_plan  # Treatment plan
+        self.animal = animal  
+        self._diagnosis = diagnosis
+        self._treatment_plan = treatment_plan
         self.__vet_notes = vet_notes  # Notes from the veterinarian 
 
 
@@ -262,12 +262,13 @@ if __name__ == "__main__":
 class Y:
 	def __init__(self):
 		self.a = 9
+		self.b = 2
 		
 class X(Y):
 	def __init__(self):
 		self.a = 1
 		super().__init__()
-		self.a += 1
+		self.a += self.b
 		
 	def get(self):
 		return self.a
@@ -362,3 +363,4 @@ Discuss the data design decisions that have been made in this system.
 * -◇ a hollow a diamond arrowhead denotes **aggregation**
 * -◆ an opaque diamond arrowhead denotes **composition**
 * The x...y syntax denotes **cardinality** - how many instances of some object associate with how many instances of another object.
+
