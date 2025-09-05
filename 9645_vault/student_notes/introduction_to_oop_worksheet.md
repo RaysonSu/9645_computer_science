@@ -39,6 +39,9 @@ Give another example program and suggest what might be represented as an object 
 
 **A:**
 
+> A program is designed to perform version control
+> each commit is represented as an object
+
 ---
 
 *To save, share and backup your work:*
@@ -106,6 +109,16 @@ Instantiate three employees inside variables named `bill`, `bob` and `ben`.
 
 **A:**
 
+```python
+class Employee:
+	def __init__(self) -> None:
+		self.salary = int(input("How much am I getting paid?"))
+
+bill = Employee()
+bob = Employee()
+ben = Employee()
+```
+
 ---
 
 *To save, share and back up your work:*
@@ -170,6 +183,18 @@ Create an instance of a `Student` - using yourself as an example.
 ---
 
 **A:**
+
+```python
+from datetime import date
+
+class Student:
+	def __init__(self, dob: date) -> None:
+		self.dob = dob
+		self.class: str
+
+me = Student(date(7, 3, 2009))
+me.class = "12Y"
+```
 
 ---
 
@@ -252,6 +277,50 @@ Create getter methods so that every property contained within a given student ca
 
 **A:**
 
+```python
+from datetime import date
+
+class Student:
+	def __init__(self, dob: date) -> None:
+		self.__dob = dob
+		self.__class: str
+		self.__fav_subject: str
+		self.__grades: list[str]: []
+		self.__eca = 0
+	
+	def set_fav_subject(self, subject: str) -> None:
+		if len(subject) < 3:
+			raise ValueError("subject name too short")
+		
+		self.__fav_subject = subject
+	
+	# stupid
+	def set_class(self, class: str) -> None:
+		self.__class = class
+	
+	def add_grade(self, grade: str) -> None:
+		self.__grades.append(grade)
+	
+	def add_eca(self) -> None:
+		self.__eca += 1
+	
+	def get_dob(self) -> date:
+		return self.__dob
+	
+	def get_class(self) -> str:
+		return self.__class
+	
+	def get_fav_subject(self) -> str:
+		return self.__fav_subject
+	
+	def get_grades(self) -> list[str]:
+		return self.__grades 
+		# this is even more stupid as it returns a refrence
+	
+	def get_eca(self) -> int:
+		return self.__eca
+```
+
 ---
 
 *To save, share and back up your work:*
@@ -283,6 +352,54 @@ The GPA can be calculated by finding the point score for each grade the student 
 ---
 
 **A:**
+
+```python
+from datetime import date
+
+class Student:
+	def __init__(self, dob: date) -> None:
+		self.__dob = dob
+		self.__class: str
+		self.__fav_subject: str
+		self.__grades: list[str]: []
+		self.__eca = 0
+	
+	def set_fav_subject(self, subject: str) -> None:
+		if len(subject) < 3:
+			raise ValueError("subject name too short")
+		
+		self.__fav_subject = subject
+	
+	# stupid
+	def set_class(self, class: str) -> None:
+		self.__class = class
+	
+	def add_grade(self, grade: str) -> None:
+		self.__grades.append(grade)
+	
+	def add_eca(self) -> None:
+		self.__eca += 1
+	
+	def get_dob(self) -> date:
+		return self.__dob
+	
+	def get_class(self) -> str:
+		return self.__class
+	
+	def get_fav_subject(self) -> str:
+		return self.__fav_subject
+	
+	def get_grades(self) -> list[str]:
+		return self.__grades 
+		# this is even more stupid as it returns a refrence
+	
+	def get_eca(self) -> int:
+		return self.__eca
+	
+	def calculate_gpa(self) -> float:
+		gpa = {"A*": 4, "A": 3.2, "B": 2.6, "C": 1.8, "D": 1.0, "E"; 0.2, "U": 0}
+		return sum(gpa[grade] for grade in self.__grades) / len(self.__grades)
+```
 
 ---
 
@@ -321,6 +438,58 @@ Implement getters / setters for the new properties as required.
 
 **A:**
 
+```python
+
+from datetime import date
+
+class Student:
+	def __init__(self, dob: date) -> None:
+		self.name: str
+		self._age: int
+		self.__number_of_stolen_pizzas_from_the_six_form_hub: int
+		self.__dob = dob
+		self.__class: str
+		self.__fav_subject: str
+		self.__grades: list[str]: []
+		self.__eca = 0
+	
+	def set_fav_subject(self, subject: str) -> None:
+		if len(subject) < 3:
+			raise ValueError("subject name too short")
+		
+		self.__fav_subject = subject
+	
+	# stupid
+	def set_class(self, class: str) -> None:
+		self.__class = class
+	
+	def add_grade(self, grade: str) -> None:
+		self.__grades.append(grade)
+	
+	def add_eca(self) -> None:
+		self.__eca += 1
+	
+	def get_dob(self) -> date:
+		return self.__dob
+	
+	def get_class(self) -> str:
+		return self.__class
+	
+	def get_fav_subject(self) -> str:
+		return self.__fav_subject
+	
+	def get_grades(self) -> list[str]:
+		return self.__grades 
+		# this is even more stupid as it returns a refrence
+	
+	def get_eca(self) -> int:
+		return self.__eca
+	
+	def calculate_gpa(self) -> float:
+		gpa = {"A*": 4, "A": 3.2, "B": 2.6, "C": 1.8, "D": 1.0, "E"; 0.2, "U": 0}
+		return sum(gpa[grade] for grade in self.__grades) / len(self.__grades)
+```
+
 ---
 
 *To save, share and backup your work:*
@@ -348,6 +517,43 @@ Re-write your `Student` class from this worksheet using the Pythonic getter / se
 ---
 
 **A:**
+
+
+```python
+
+from datetime import date
+
+class Student:
+	def __init__(self, dob: date) -> None:
+		self.__name: str
+		self.__age: int
+		self.__number_of_stolen_pizzas_from_the_six_form_hub: int
+		self.__dob = dob
+		self.__class: str
+		self.__fav_subject: str
+		self.__grades: list[str]: []
+		self.__eca = 0
+	
+	def set_fav_subject(self, subject: str) -> None:
+		if len(subject) < 3:
+			raise ValueError("subject name too short")
+		
+		self.__fav_subject = subject
+	
+	@property
+	def name(self) -> str:
+		return self.__name
+	
+	@name.setter
+	def name(self, name: str) -> None:
+		self.__name = name
+	
+	# finish later
+	
+	def calculate_gpa(self) -> float:
+		gpa = {"A*": 4, "A": 3.2, "B": 2.6, "C": 1.8, "D": 1.0, "E"; 0.2, "U": 0}
+		return sum(gpa[grade] for grade in self.__grades) / len(self.__grades)
+```
 
 ---
 
