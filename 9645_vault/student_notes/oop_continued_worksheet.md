@@ -66,8 +66,20 @@ Instantiate an object of each class from the example and show examples of access
 
 **A:**
 
-```python3
+```python
+foo = Vehicle("bar", "foobar", 2000)
+foo.set_year(2078)
+bar = foo.get_year()
 
+foobar = Motorbike("barbar", "foofoo", 2039, 11)
+foobar.set_engine_displacement(99)
+barbar = foobar.get_engine_displacement()
+
+barfoo = Car("foobarbar", "barfoo", 1922, 30)
+barfoo.set_num_doors(-1)
+foofoo = barfoo.get_num_doors()
+
+# this is so stupid
 ```
 
 ---
@@ -91,6 +103,14 @@ Create a new class named `InternationalStudent` that inherits from your `Student
 
 **A:**
 
+```python
+class InternationalStudent(Student):
+	def __init__(self, name: str, nationality: str) -> None:
+		super().__init__(name) # i know this doesn't work but idc
+		self.nationality = nationality
+		self.__fee_paid = False
+		self._grade_expected_by_parent = 101
+```
 ---
 
 *To save, share and backup your work:*
@@ -112,6 +132,12 @@ Instantiate three `InternationalStudent` objects and set their default propertie
 ---
 
 **A:**
+
+```python
+foo = InternationalStudent("foo", "foofoo")
+bar = InternationalStudent("bar", "barbar")
+baz = InternationalStudent("baz", "bazbaz")
+```
 
 ---
 
@@ -135,6 +161,25 @@ The `find_necessary_tutors` method iterates through the student’s grades and c
 ---
 
 **A:**
+
+```python
+class InternationalStudent(Student):
+	def __init__(self, name: str, nationality: str) -> None:
+		super().__init__(name) # i know this doesn't work but idc
+		self.nationality = nationality
+		self.__fee_paid = False
+		self._grade_expected_by_parent = "A**"
+	
+	def find_necessary_tutors(self) -> None:
+		for grade in self.__grades:
+			if len(grade) < len(self._grade_expected_by_parent):
+				return True
+			
+			if grade < self._grade_expected_by_parent:
+				return True
+		
+		return False
+```
 
 ---
 
@@ -193,6 +238,18 @@ Override the `calculate_gpa` method in the `InternationalStudent` class. The ove
 ---
 
 **A:**
+
+```python
+class InternationalStudent(Student):
+	def __init__(self, name: str, nationality: str) -> None:
+		super().__init__(name) # i know this doesn't work but idc
+		self.nationality = nationality
+		self.__fee_paid = False
+		self._grade_expected_by_parent = 101
+	
+	def calculate_gpa(self) -> float:
+		return super().calculate_gpa() * len(self._name) / 100
+```
 
 ---
 
@@ -256,6 +313,11 @@ Refactor the `Student` and `InternationalStudent` classes to use a `Subject` cla
 
 **A:**
 
+```python
+
+
+
+```
 ---
 
 *To save, share and backup your work:*
